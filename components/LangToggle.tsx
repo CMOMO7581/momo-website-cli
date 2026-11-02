@@ -4,6 +4,7 @@ import { pagePath, type Lang } from "@/lib/content";
 export default function LangToggle({ lang }: { lang: Lang }) {
   function go(next: Lang) {
     if (next === lang) return;
+    try { localStorage.setItem("mc-lang", next); } catch {}
     location.href = pagePath[next] + location.hash;
   }
   return (
