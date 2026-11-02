@@ -8,11 +8,12 @@ import CopyButton from "./CopyButton";
 import ContactForm from "./ContactForm";
 import { content, type Key, type Lang } from "@/lib/content";
 import links from "@/content/links.json";
+import site from "@/content/site.json";
 
 type LinkId = keyof typeof links;
 
-const EMAIL = "cc79336@eid.utexas.edu";
-const LINKEDIN = "https://www.linkedin.com/in/momochen0517";
+const EMAIL = site.email;
+const LINKEDIN = site.linkedin;
 
 const RESUMES = { en: "/resume/Momo-Chen-Resume-EN.pdf", zh: "/resume/Momo-Chen-Resume-ZH.pdf" };
 

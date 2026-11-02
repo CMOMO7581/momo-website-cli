@@ -105,6 +105,11 @@
   "r.en.t": "English Resume",
   "r.zh.t": "中文履歷",
   "ft.copy": "© 2026 Cheng-Mou (Momo) Chen <span lang=\"zh-Hant\">陳政謀</span>",
+  "f.note.send": "Your message will be sent to cc79336@eid.utexas.edu.",
+  "f.send": "Send message",
+  "f.sending": "Sending…",
+  "f.ok": "Thanks, your message was sent. I'll reply by email.",
+  "f.fail": "Your message couldn't be sent. Please try again, or copy it below and email it to cc79336@eid.utexas.edu.",
   "ui": {
     "soon": "Coming soon",
     "dark": "Dark",

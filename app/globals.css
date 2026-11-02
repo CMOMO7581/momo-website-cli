@@ -133,3 +133,6 @@ textarea{min-height:120px;resize:vertical}
 
 footer{font-size:13px;color:var(--text-2)}
 footer p{margin:0 0 6px}
+
+/* Contact form honeypot: off-screen for people, still filled in by bots */
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
