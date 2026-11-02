@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import path from "node:path";
 import type { ElementType, ComponentPropsWithoutRef } from "react";
 import ChartBg from "./ChartBg";
 import ThemeToggle from "./ThemeToggle";
@@ -9,10 +11,21 @@ import { content, type Key, type Lang } from "@/lib/content";
 const EMAIL = "cc79336@eid.utexas.edu";
 const LINKEDIN = "https://www.linkedin.com/in/momochen0517";
 
+const RESUMES = { en: "/resume/Momo-Chen-Resume-EN.pdf", zh: "/resume/Momo-Chen-Resume-ZH.pdf" };
+
+// Checked at build time: a button only becomes a download once its PDF is in public/resume/.
+const hasFile = (href: string) => existsSync(path.join(process.cwd(), "public", href));
+
 const doc = <svg className="picto" viewBox="0 0 40 40" aria-hidden="true"><path d="M10 4h14l8 8v24H10z"/><path d="M24 4v8h8"/><path d="M15 19h12M15 24h12M15 29h8"/></svg>;
 
 export default function Portfolio({ lang }: { lang: Lang }) {
   const t = content[lang];
+
+  function ResumeButton({ which }: { which: keyof typeof RESUMES }) {
+    const href = RESUMES[which];
+    if (!hasFile(href)) return <a className="btn" aria-disabled="true">{t.ui.soon}</a>;
+    return <T as="a" className="btn" href={href} download k="r.dl" />;
+  }
 
   // Renders a copy string (which may contain inline markup) inside the given tag.
   function T<E extends ElementType = "span">({ k, as, ...rest }: { k: Key; as?: E } & ComponentPropsWithoutRef<E>) {
@@ -172,7 +185,7 @@ export default function Portfolio({ lang }: { lang: Lang }) {
                 <div>
                   <T as="h3" lang="en" k="r.en.t" />
                   <T as="p" className="meta" k="r.en.m" />
-                  <a className="btn" href="#" aria-disabled="true">{t.ui.soon}</a>
+                  <ResumeButton which="en" />
                 </div>
               </div>
               <div className="resume-opt">
@@ -180,7 +193,7 @@ export default function Portfolio({ lang }: { lang: Lang }) {
                 <div>
                   <T as="h3" lang="zh-Hant" k="r.zh.t" />
                   <T as="p" className="meta" k="r.zh.m" />
-                  <a className="btn" href="#" aria-disabled="true">{t.ui.soon}</a>
+                  <ResumeButton which="zh" />
                 </div>
               </div>
             </div>
