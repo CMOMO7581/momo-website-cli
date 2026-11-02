@@ -7,6 +7,9 @@ import LangToggle from "./LangToggle";
 import CopyButton from "./CopyButton";
 import ContactForm from "./ContactForm";
 import { content, type Key, type Lang } from "@/lib/content";
+import links from "@/content/links.json";
+
+type LinkId = keyof typeof links;
 
 const EMAIL = "cc79336@eid.utexas.edu";
 const LINKEDIN = "https://www.linkedin.com/in/momochen0517";
@@ -20,6 +23,23 @@ const doc = <svg className="picto" viewBox="0 0 40 40" aria-hidden="true"><path 
 
 export default function Portfolio({ lang }: { lang: Lang }) {
   const t = content[lang];
+
+  // A link opens in a new tab; one left blank in content/links.json is not rendered.
+  function Ext({ id, k }: { id: LinkId; k: Key }) {
+    const url = links[id];
+    return url ? <T as="a" href={url} target="_blank" rel="noopener" k={k} /> : null;
+  }
+
+  // A row of project links, hidden entirely when every link in it is blank.
+  function Links({ items }: { items: [LinkId, Key][] }) {
+    if (!items.some(([id]) => links[id])) return null;
+    return <p className="links">{items.map(([id, k]) => <Ext key={id} id={id} k={k} />)}</p>;
+  }
+
+  // A writing title: linked when its URL is set, plain text otherwise.
+  function Title({ id, k }: { id: LinkId; k: Key }) {
+    return <h3>{links[id] ? <Ext id={id} k={k} /> : <T k={k} />}</h3>;
+  }
 
   function ResumeButton({ which }: { which: keyof typeof RESUMES }) {
     const href = RESUMES[which];
@@ -92,7 +112,7 @@ export default function Portfolio({ lang }: { lang: Lang }) {
                   <T as="li" k="w1.b2" />
                 </ul>
                 <T as="p" className="tools" k="w1.tools" />
-                <p className="links"><T as="a" href="#" k="l.code" /><T as="a" href="#" k="l.report" /></p>
+                <Links items={[["backtest-code", "l.code"], ["backtest-report", "l.report"]]} />
               </div>
             </article>
 
@@ -107,7 +127,7 @@ export default function Portfolio({ lang }: { lang: Lang }) {
                   <T as="li" k="w2.b2" />
                 </ul>
                 <T as="p" className="tools" k="w2.tools" />
-                <p className="links"><T as="a" href="#" k="l.live" /><T as="a" href="#" k="l.code" /></p>
+                <Links items={[["roadmap-live", "l.live"], ["roadmap-code", "l.code"]]} />
               </div>
             </article>
 
@@ -122,7 +142,7 @@ export default function Portfolio({ lang }: { lang: Lang }) {
                   <T as="li" k="w3.b2" />
                 </ul>
                 <T as="p" className="tools" k="w3.tools" />
-                <p className="links"><T as="a" href="#" k="l.case" /></p>
+                <Links items={[["agents-writeup", "l.case"]]} />
               </div>
             </article>
 
@@ -133,7 +153,7 @@ export default function Portfolio({ lang }: { lang: Lang }) {
                 <T as="h3" k="w4.t" />
                 <T as="p" k="w4.lead" />
                 <T as="p" className="tools" k="w4.tools" />
-                <p className="links"><T as="a" href="#" k="l.deck" /></p>
+                <Links items={[["aligna-deck", "l.deck"]]} />
               </div>
             </article>
           </section>
@@ -155,9 +175,9 @@ export default function Portfolio({ lang }: { lang: Lang }) {
           <section id="writing">
             <T as="h2" k="wr.h" />
             <ol className="entries">
-              <li><T as="div" className="when" k="wr1.w" /><div><h3><T as="a" href="#" k="wr1.t" /></h3><T as="p" className="org" k="wr1.o" /><T as="p" k="wr1.d" /></div></li>
-              <li><T as="div" className="when" k="wr2.w" /><div><h3><T as="a" href="#" k="wr2.t" /></h3><T as="p" className="org" k="wr2.o" /><T as="p" k="wr2.d" /></div></li>
-              <li><T as="div" className="when" k="wr3.w" /><div><h3><T as="a" href="#" k="wr3.t" /></h3><T as="p" className="org" k="wr3.o" /><T as="p" k="wr3.d" /></div></li>
+              <li><T as="div" className="when" k="wr1.w" /><div><Title id="tulj-article" k="wr1.t" /><T as="p" className="org" k="wr1.o" /><T as="p" k="wr1.d" /></div></li>
+              <li><T as="div" className="when" k="wr2.w" /><div><Title id="interp-edu" k="wr2.t" /><T as="p" className="org" k="wr2.o" /><T as="p" k="wr2.d" /></div></li>
+              <li><T as="div" className="when" k="wr3.w" /><div><Title id="interp-ai" k="wr3.t" /><T as="p" className="org" k="wr3.o" /><T as="p" k="wr3.d" /></div></li>
             </ol>
           </section>
 
