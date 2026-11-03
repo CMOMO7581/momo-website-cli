@@ -179,7 +179,6 @@ export default function Portfolio({ lang }: { lang: Lang }) {
             <ol className="entries">
               <li><T as="div" className="when" k="wr1.w" /><div><Title id="tulj-article" k="wr1.t" /><T as="p" className="org" k="wr1.o" /><T as="p" k="wr1.d" /></div></li>
               <li><T as="div" className="when" k="wr2.w" /><div><Title id="interp-edu" k="wr2.t" /><T as="p" className="org" k="wr2.o" /><T as="p" k="wr2.d" /></div></li>
-              <li><T as="div" className="when" k="wr3.w" /><div><Title id="interp-ai" k="wr3.t" /><T as="p" className="org" k="wr3.o" /><T as="p" k="wr3.d" /></div></li>
             </ol>
           </section>
 
