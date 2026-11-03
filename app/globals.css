@@ -49,6 +49,10 @@ hr{border:0;border-top:1px solid var(--rule);margin:52px 0}
 .chart-bg .ln{fill:none;stroke:color-mix(in srgb,var(--icon) 26%,transparent);stroke-width:1.25}
 .chart-bg .ar{fill:color-mix(in srgb,var(--icon) 5%,transparent)}
 .chart-bg .vol{fill:color-mix(in srgb,var(--text) 7%,transparent)}
+/* The chart is two identical tiles wide and slides left by one tile per loop. */
+.chart-bg{width:200%;animation:chart-shift 90s linear infinite;will-change:transform}
+@keyframes chart-shift{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.chart-bg{animation:none}}
 
 .sig{font-family:var(--script);font-size:clamp(34px,6vw,44px);line-height:1.1;margin:0;text-decoration:none;display:block}
 .sig:hover{color:var(--text)}
