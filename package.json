@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "npx serve out"
+    "start": "npx serve out",
+    "fonts": "node scripts/fetch-fonts.mjs",
+    "prebuild": "npm run fonts"
   },
   "dependencies": {
     "next": "16.3.1",

@@ -18,6 +18,10 @@ Everything a visitor reads is in this folder. Edit a file, then run `npm run bui
 - **Strings that are the same in both languages** (tool lists, the TULJ title, the copyright line) still appear in both files, so each file has the full page.
 - **Changing your email:** update `site.json` and also the copy strings that mention it: search both JSON files for the old address (`about.p3`, `f.note`, `f.note.send`, `f.paste`, `f.fail`).
 
+## Fonts
+
+The Chinese fonts contain only the characters the pages use. `npm run build` regenerates them from these JSON files automatically (it needs an internet connection to reach Google Fonts). If you preview with `npm run dev` after adding new Chinese characters, run `npm run fonts` once.
+
 ## Resumes
 
 Put the PDFs at `public/resume/Momo-Chen-Resume-EN.pdf` and `public/resume/Momo-Chen-Resume-ZH.pdf`. The Download buttons turn on automatically when the files exist at build time.
