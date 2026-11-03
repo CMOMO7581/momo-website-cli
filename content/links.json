@@ -1,8 +1,8 @@
 {
-  "backtest-code": "",
+  "backtest-code": "https://github.com/CMOMO7581/factor-backtest-engine",
   "backtest-report": "",
-  "roadmap-live": "",
-  "roadmap-code": "",
+  "roadmap-live": "https://prelawroadmap.vercel.app/",
+  "roadmap-code": "https://github.com/CMOMO7581/Prelaw_Roadmap",
   "agents-writeup": "",
   "aligna-deck": "",
   "tulj-article": "https://www.texasulj.org/blog/tipping-the-scale-ingestion-output-and-authorship-in-the-age-of-generative-ai",
