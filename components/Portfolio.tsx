@@ -69,6 +69,7 @@ export default function Portfolio({ lang }: { lang: Lang }) {
                 <li><T as="a" href="#work" k="nav.work" /></li>
                 <li><T as="a" href="#experience" k="nav.exp" /></li>
                 <li><T as="a" href="#writing" k="nav.writing" /></li>
+                <li><T as="a" href="#certificates" k="nav.cert" /></li>
                 <li><T as="a" href="#resume" k="nav.resume" /></li>
                 <li><T as="a" href="#contact" k="nav.contact" /></li>
                 <li><ThemeToggle ui={t.ui} /></li>
