@@ -201,7 +201,16 @@ export default function Portfolio({ lang }: { lang: Lang }) {
           <section id="certificates">
             <T as="h2" k="cert.h" />
             <ol className="entries">
-              <li><T as="div" className="when" k="cert1.w" /><div><T as="h3" k="cert1.t" /><T as="p" className="org" k="cert1.o" /><Links items={[["bmc-cert", "l.cert"]]} /></div></li>
+              <li><T as="div" className="when" k="cert1.w" /><div className="cert">
+                {/* Preview of the certificate; the "View certificate" link below carries the same destination for keyboard and screen-reader users. */}
+                <a className="cert-thumb" href={links["bmc-cert"] || undefined} target="_blank" rel="noopener" tabIndex={-1} aria-hidden="true">
+                  <picture>
+                    <source srcSet="/certificates/bmc.avif" type="image/avif" />
+                    <img src="/certificates/bmc.jpg" width={320} height={226} alt="" loading="lazy" decoding="async" />
+                  </picture>
+                </a>
+                <div><T as="h3" k="cert1.t" /><T as="p" className="org" k="cert1.o" /><Links items={[["bmc-cert", "l.cert"]]} /></div>
+              </div></li>
             </ol>
           </section>
 
