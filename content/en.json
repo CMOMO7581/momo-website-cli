@@ -10,7 +10,7 @@
   "about.p1": "I'm <strong>Cheng-Mou (Momo) Chen</strong> <span lang=\"zh-Hant\">陳政謀</span>, a sophomore at the McCombs School of Business at UT Austin, planning to declare Finance alongside a BA in Economics. I build things where capital markets, technology, and the rules that govern them overlap.",
   "about.p2": "My work runs in three directions: quantitative projects like a factor-investing backtest engine, AI tools built for a research team at the UT School of Nursing, and legal writing on securities regulation and AI copyright. I'm headed toward management consulting, and possibly corporate law in finance and securities regulation.",
   "about.p3": "I'm fluent in English and Mandarin, read and write both Traditional and Simplified Chinese, and split my time between Austin and Taiwan. Take a look at my <a href=\"#work\">work</a>, download my <a href=\"#resume\">resume</a>, or reach me at <a href=\"#contact\">cc79336@eid.utexas.edu</a> or on <a href=\"https://www.linkedin.com/in/momochen0517\" target=\"_blank\" rel=\"noopener\">LinkedIn</a>.",
-  "about.facts": "<span>GPA 4.00</span><span>University Honors, Fall 2025 &amp; Spring 2026</span><span>Class of 2029</span>",
+  "about.facts": "<span>GPA 4.00</span><span>University Honors, Fall 2025 &amp; Spring 2026</span><span class=\"year\">Class of 2029</span>",
   "work.h": "Selected Work",
   "w1.k": "Quantitative finance",
   "w1.t": "Factor Investing Backtest Engine",

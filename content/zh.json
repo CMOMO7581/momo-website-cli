@@ -10,7 +10,7 @@
   "about.p1": "我是<strong>陳政謀</strong>（Cheng-Mou “Momo” Chen），目前就讀德州大學奧斯汀分校麥康姆斯商學院（McCombs School of Business）二年級，計畫主修金融，並同時攻讀經濟學學士。我關注的是資本市場、科技，以及規範兩者的法律制度三者交會之處。",
   "about.p2": "我的工作主要朝三個方向發展：量化金融專案，例如因子投資回測引擎；為德州大學護理學院研究團隊開發的 AI 工具；以及關於證券監理與 AI 著作權的法律寫作。我的職涯目標是管理顧問，未來也考慮投入專精於金融與證券監理的公司法領域。",
   "about.p3": "我能流利使用英文與中文，熟悉繁體與簡體中文的讀寫，平時往返於奧斯汀與臺灣之間。歡迎瀏覽我的<a href=\"#work\">作品</a>、下載我的<a href=\"#resume\">履歷</a>，或透過 <a href=\"#contact\">cc79336@eid.utexas.edu</a> 及 <a href=\"https://www.linkedin.com/in/momochen0517\" target=\"_blank\" rel=\"noopener\">LinkedIn</a> 與我聯繫。",
-  "about.facts": "<span>GPA 4.00</span><span>大學榮譽榜（University Honors），2025 秋季及 2026 春季</span><span>2029 年畢業</span>",
+  "about.facts": "<span>GPA 4.00</span><span>大學榮譽榜（University Honors），2025 秋季及 2026 春季</span><span class=\"year\">2029 年畢業</span>",
   "work.h": "精選作品",
   "w1.k": "量化金融",
   "w1.t": "因子投資回測引擎",

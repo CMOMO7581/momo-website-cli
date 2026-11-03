@@ -79,6 +79,8 @@ figure{margin:0}
 figcaption{font-style:italic;font-size:12px;line-height:1.5;color:var(--text-2);margin-top:8px}
 .facts{margin-top:18px;font-size:13.5px;color:var(--text-2)}
 .facts span + span::before{content:"·";margin:0 10px;color:var(--rule)}
+.facts .year{display:block}
+.facts .year::before{content:none}
 @media (max-width:620px){.intro-grid{grid-template-columns:minmax(0,1fr)}figure{max-width:180px}}
 
 /* Projects */
