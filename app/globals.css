@@ -1,11 +1,11 @@
 :root{
-  --bg:#FFFFFF;
+  --bg:#FDFBF6;         /* very slight cream white */
   --text:#383838;
   --text-2:#6E6E6E;
   --rule:#E3E3E3;
   --icon:#2E5A7A;       /* muted navy for pictograms and link hover */
   --figure:#B4520A;     /* burnt orange, only on headline numbers */
-  --field:#FAFAFA;
+  --field:#F8F5EE;
   --script:"La Belle Aurore", "Snell Roundhand", cursive;
   --serif:"Lora", "Noto Serif TC", Georgia, serif;
   --sans:"Open Sans", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
