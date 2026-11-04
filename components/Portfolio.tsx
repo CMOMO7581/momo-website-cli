@@ -84,18 +84,14 @@ export default function Portfolio({ lang }: { lang: Lang }) {
         <main>
           <section className="intro" id="about">
             <T as="h1" k="about.h" />
-            <div className="intro-grid">
-              <div>
-                <T as="p" k="about.p1" />
-                <T as="p" k="about.p2" />
-                <T as="p" k="about.p3" />
-                <T as="p" className="facts num" k="about.facts" />
-              </div>
-              <figure>
-                <img className="photo" id="photo" src="/headshot.jpg" width={480} height={600} alt={t.ui.alt} />
-                <T as="figcaption" k="fig.cap" />
-              </figure>
-            </div>
+            <figure>
+              <img className="photo" id="photo" src="/headshot.jpg" width={480} height={600} alt={t.ui.alt} />
+              <T as="figcaption" k="fig.cap" />
+            </figure>
+            <T as="p" k="about.p1" />
+            <T as="p" k="about.p2" />
+            <T as="p" k="about.p3" />
+            <T as="p" className="facts num" k="about.facts" />
           </section>
 
           <hr />
