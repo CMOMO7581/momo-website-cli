@@ -132,6 +132,7 @@ textarea{min-height:120px;resize:vertical}
 .btn.ghost{background:transparent;color:var(--text)}
 .btn.ghost:hover{color:var(--bg)}
 .note{font-size:13px;color:var(--text-2);margin:0}
+[hidden]{display:none!important}
 .result{display:grid;gap:10px;border-top:1px solid var(--rule);padding-top:14px}
 .result pre{white-space:pre-wrap;font:13px/1.55 ui-monospace,Menlo,monospace;background:var(--field);border:1px solid var(--rule);padding:12px;margin:0;max-height:220px;overflow:auto}
 .result .acts{display:flex;flex-wrap:wrap;gap:10px}
