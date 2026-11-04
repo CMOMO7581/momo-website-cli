@@ -39,7 +39,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--text);text-wrap:ba
 h2{font-size:26px;line-height:1.35;margin:0 0 24px}
 h3{font-size:20px;line-height:1.4;margin:0 0 6px}
 p{margin:0 0 14px}
-hr{border:0;border-top:1px solid var(--rule);margin:52px 0}
+hr{border:0;border-top:1px solid var(--rule);margin:40px 0}
 
 /* Header */
 .top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
