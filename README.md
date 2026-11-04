@@ -26,7 +26,7 @@ All copy, links and settings live in `content/`. See [`content/README.md`](conte
 | Resume PDFs | Replace the files in `public/resume/` (keep the file names) |
 | Headshot | `public/headshot.jpg` (480×600) |
 | Certificate preview | `public/certificates/bmc.jpg` and `bmc.avif` |
-| Header chart speed | `app/globals.css`, the `90s` in `.chart-bg{…animation:chart-shift 90s…}` |
+| Header chart speed | `app/globals.css`: `110s` on desktop and `90s` on phones, in the `.chart-bg` rules |
 
 `npm run build` also regenerates the Chinese font files from the JSON, so new Chinese characters just work. It needs an internet connection to reach Google Fonts.
 

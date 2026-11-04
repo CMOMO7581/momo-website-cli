@@ -1,6 +1,6 @@
 // Decorative chart: a seeded random walk, not real market data.
-// It is drawn twice side by side so the CSS animation can slide it left by one tile and loop.
-const W = 1200, H = 240;
+// One tile is drawn, then repeated side by side so the CSS animation can slide it left by one tile and loop.
+const W = 1200, H = 240, TILES = 8;
 
 function drawChart() {
   let seed = 7;
@@ -22,13 +22,18 @@ function drawChart() {
     vols += '<rect class="vol" x="' + (x - 3).toFixed(1) + '" y="' + (H - vh[i]).toFixed(1) + '" width="5" height="' + vh[i].toFixed(1) + '"/>';
   }
   const d = pts.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join("");
-  const tile = '<path class="ar" d="' + d + 'L' + W + ' ' + H + 'L0 ' + H + 'Z"/>' + vols + '<path class="ln" d="' + d + '" vector-effect="non-scaling-stroke"/>';
-  return '<g>' + tile + '</g><g transform="translate(' + W + ' 0)">' + tile + '</g>';
+  // Colors come in as inherited custom properties: CSS selectors don't reach inside the <use> copies.
+  const tile = '<path class="ar" style="fill:var(--chart-ar)" d="' + d + 'L' + W + ' ' + H + 'L0 ' + H + 'Z"/>'
+    + '<g style="fill:var(--chart-vol)">' + vols + '</g>'
+    + '<path class="ln" style="fill:none;stroke:var(--chart-ln);stroke-width:1.25" d="' + d + '" vector-effect="non-scaling-stroke"/>';
+  let uses = "";
+  for (let k = 0; k < TILES; k++) uses += '<use href="#chartTile" x="' + k * W + '"/>';
+  return '<defs><g id="chartTile">' + tile + '</g></defs>' + uses;
 }
 
 export default function ChartBg() {
   return (
-    <svg className="chart-bg" id="chartBg" viewBox={`0 0 ${W * 2} ${H}`} preserveAspectRatio="none" aria-hidden="true"
+    <svg className="chart-bg" id="chartBg" viewBox={`0 0 ${W * TILES} ${H}`} preserveAspectRatio="none" aria-hidden="true"
       dangerouslySetInnerHTML={{ __html: drawChart() }} />
   );
 }
